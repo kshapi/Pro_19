@@ -1,0 +1,136 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: lightgray;
+}
+.main {
+  height: 300px;
+  width: 300px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.main .circle {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.20),
+  -1px -1px 2px 1px rgba(0,0,0,0.30),
+  inset -1px -1px 10px 1px rgba(0,0,0,0.20),
+  inset 2px 2px 5px 1px rgba(0,0,0, 0.10);
+}
+.circle ul {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+.circle ul li {
+  list-style: none;
+  position: absolute;
+  left: 5px;
+  transform-origin: 118px;
+  transform: rotateZ(calc(45deg * var(--i)));
+  font-size: 18px;
+}
+.circle ul li span {
+  display: inline-block;
+  transform: rotateZ(calc(-45deg * var(--i)));
+  font-weight: 700;
+}
+ul li .dot {
+  display: inline-block;
+  height: 3px;
+  width: 3px;
+  background: black;
+  border-radius: 5px;
+}
+.circle .time-hands{
+  height: 180px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+ #hr, #min, #sec {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: black;
+}
+.time-hands #hr {
+  top: 44px;
+  height: 60px;
+  width: 5px;
+  transform-origin: 45% 77%;
+}
+.time-hands #min {
+  top: 27px;
+  height: 85px;
+  width: 3px;
+  transform-origin: 54% 74%;
+}
+.time-hands #sec {
+  top: 11px;
+  height: 110px;
+  width: 1px;
+  transform-origin: 55% 72%;
+}
+.time-hands #center {
+  height: 15px;
+  width: 15px;
+  position: relative;
+  border-radius: 10px;
+  background: black;
+  overflow: hidden;
+}
+.digital {
+  position: absolute;
+  top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #818185;
+  font-family: serif;
+}
+#hr .arrow-off-hr {
+  position: absolute;
+  top: -10px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 0px 6px 12px 6px;
+  border-color: transparent transparent #000 transparent;
+  border-style: solid;
+}
+#min .arrow-off-min {
+  position: absolute;
+  top: -10px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 0px 5px 13px 5px;
+  border-color: transparent transparent #000 transparent;
+  border-style: solid;
+}
